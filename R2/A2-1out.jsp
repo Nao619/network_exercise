@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import = "java.net.*"%>
+<%@ page import = "java.util.*" %>
 <%
 String message;
  
@@ -20,7 +21,12 @@ if(message != null) {
 	Cookie cookie2 = new Cookie("year",year);
 	Cookie cookie3 = new Cookie("month",month);
 	Cookie cookie4 = new Cookie("date",date);
-	cookie.setMaxAge(60*60*24*30);
+	
+	cookie1.setMaxAge(60*60*24*30);
+	cookie2.setMaxAge(60*60*24*30);
+	cookie3.setMaxAge(60*60*24*30);
+	cookie4.setMaxAge(60*60*24*30);
+	
 	response.addCookie(cookie1);
 	response.addCookie(cookie2);
 	response.addCookie(cookie3);
@@ -30,6 +36,6 @@ if(message != null) {
  
 <HTML><HEAD><TITLE>Cookieのチェック</TITLE></HEAD><BODY>
 <BR>
-<%= message %>の開催日まであと<%= days>日
+<%= message %>の開催日まであと<%= days %>日
 <BR>
 </BODY></HTML>
